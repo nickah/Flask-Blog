@@ -21,8 +21,9 @@ def show_post(n):
 @app.route("/")
 def list_posts():
     html = ""
-    for title in titles:
-        html += title + "poo" +  "<br />\n"
+    for i in range(len(titles)):
+        title = titles[i]
+        html += '<a href="/post/' + str(i+1) + '">' + title + '</a><br />\n'
     return html
 
 app.run(debug=True)
